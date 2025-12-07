@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mahesh Babu Kola | Microsoft 365 Administrator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Mahesh Babu Kola, Microsoft 365 Administrator specializing in Exchange, Teams, SharePoint Online, Entra ID and Modern Workplace." />
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-alt: #0b1020;
+      --card: #111827;
+      --accent: #4f46e5;
+      --accent-soft: rgba(79, 70, 229, 0.15);
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+      --radius-lg: 18px;
+      --radius-xl: 999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 45%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
+      gap: 28px;
+      margin: 10px 0 32px;
+      align-items: center;
+    }
+
+    .hero-main h1 {
+      font-size: clamp(2.1rem, 3.2vw, 2.8rem);
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .hero-main h1 span {
+      background: linear-gradient(135deg, #a855f7, #4f46e5, #22d3ee);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      color: var(--muted);
+      max-width: 540px;
+      font-size: 0.98rem;
+      margin-bottom: 18px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .tag {
+      font-size: 0.78rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(55, 65, 81, 0.8);
+      color: #e5e7eb;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .btn {
+      border-radius: var(--radius-xl);
+      padding: 9px 16px;
+      font-size: 0.9rem;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #4f46e5, #6366f1);
+      color: white;
+      box-shadow: 0 10px 25px rgba(79, 70, 229, 0.45);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 28px rgba(79, 70, 229, 0.6);
+    }
+
+    .btn-ghost {
+      background: rgba(15, 23, 42, 0.9);
+      border-color: rgba(55, 65, 81, 0.9);
+      color: var(--muted);
+    }
+
+    .btn-ghost:hover {
+      border-color: #4f46e5;
+      color: #e5e7eb;
+    }
+
+    .hero-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top left, #1e293b 0, #020617 55%);
+      border-radius: 22px;
+      padding: 18px 18px 16px;
+      border: 1px solid rgba(55, 65, 81, 0.7);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.8);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle at top, rgba(79, 70, 229, 0.16), transparent 60%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .hero-role {
+      font-size: 0.78rem;
+      color: #cbd5f5;
+    }
+
+    .hero-location {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .hero-pill {
+      font-size: 0.72rem;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(75, 85, 99, 0.85);
+      color: #e5e7eb;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-mini-card {
+      background: rgba(15, 23, 42, 0.96);
+      border-radius: 14px;
+      padding: 8px 8px 7px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .mini-label {
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    .mini-value {
+      font-size: 0.8rem;
+    }
+
+    .hero-card-footer {
+      border-top: 1px dashed rgba(75, 85, 99, 0.7);
+      margin-top: 10px;
+      padding-top: 7px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.72rem;
+      color: var(--muted);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 28px;
+    }
+
+    .section-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title::before {
+      content: "";
+      width: 18px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #4f46e5, #22d3ee);
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card {
+      border-radius: var(--radius-lg);
+      background: rgba(15, 23, 42, 0.92);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      padding: 12px 13px;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .card-subtitle {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .pill {
+      border-radius: 999px;
+      padding: 2px 8px;
+      font-size: 0.7rem;
+      background: rgba(37, 99, 235, 0.2);
+      border: 1px solid rgba(59, 130, 246, 0.5);
+      color: #bfdbfe;
+    }
+
+    .card-body {
+      font-size: 0.8rem;
+      color: #e5e7eb;
+      margin-top: 6px;
+    }
+
+    .list {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 4px;
+    }
+
+    .list li {
+      font-size: 0.8rem;
+      color: #e5e7eb;
+      margin-bottom: 3px;
+      display: flex;
+      gap: 6px;
+    }
+
+    .list li::before {
+      content: "•";
+      color: #6366f1;
+      margin-top: 1px;
+    }
+
+    .skills-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .skill-chip {
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: rgba(15, 23, 42, 0.96);
+      color: #e5e7eb;
+    }
+
+    .projects-tagline {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px dashed rgba(55, 65, 81, 0.9);
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+    }
+
+    .footer-links a:hover {
+      color: #e5e7eb;
+    }
+
+    @media (max-width: 840px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .page {
+        padding-inline: 14px;
+      }
+      .hero-card {
+        margin-top: -4px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="logo">MBK · PORTFOLIO</div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-main">
+        <h1>Hi, I’m <span>Mahesh Babu Kola</span></h1>
+        <p class="hero-subtitle">
+          Microsoft 365 Administrator specializing in Exchange Online, Teams, SharePoint Online, Entra ID,
+          and Modern Workplace. I help enterprises secure identities, streamline collaboration, and modernize
+          their M365 environments.
+        </p>
+
+        <div class="hero-tags">
+          <div class="tag">Microsoft 365 Administration</div>
+          <div class="tag">Exchange · Teams · SharePoint</div>
+          <div class="tag">Entra ID & Conditional Access</div>
+          <div class="tag">Power Platform</div>
+          <div class="tag">M365 Security & Compliance</div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="mailto:maheshkola1@outlook.com" class="btn btn-primary">
+            Contact Me
+          </a>
+          <a href="#experience" class="btn btn-ghost">
+            View Experience
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <span>📍 Hyderabad, Telangana, India</span>
+          <span>📧 maheshkola1@outlook.com</span>
+          <span>🔗 linkedin.com/in/mahesh-kola-0b9059204</span>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <div class="hero-card-header">
+          <div>
+            <div class="hero-name">Mahesh Kola</div>
+            <div class="hero-role">Microsoft 365 Administrator</div>
+            <div class="hero-location">Exchange · Teams · SharePoint · Entra ID</div>
+          </div>
+          <div class="hero-pill">5+ yrs · Enterprise Environments</div>
+        </div>
+
+        <div class="hero-grid">
+          <div class="hero-mini-card">
+            <div class="mini-label">Current Role</div>
+            <div class="mini-value">Technical Specialist · TCS</div>
+          </div>
+          <div class="hero-mini-card">
+            <div class="mini-label">Primary Stack</div>
+            <div class="mini-value">M365 · Power Platform · Azure AD</div>
+          </div>
+          <div class="hero-mini-card">
+            <div class="mini-label">Certifications</div>
+            <div class="mini-value">MS-700 · MS-100 · SAFe</div>
+          </div>
+          <div class="hero-mini-card">
+            <div class="mini-label">Focus Areas</div>
+            <div class="mini-value">Admin · Security · Migrations</div>
+          </div>
+        </div>
+
+        <div class="hero-card-footer">
+          <span>Available for Microsoft 365 / Modern Workplace roles</span>
+          <span>Last updated: 2025</span>
+        </div>
+      </aside>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <h2 class="section-title">About</h2>
+      <div class="card">
+        <div class="card-body">
+          I am a Microsoft 365 Administrator with hands-on experience managing Exchange Online, Microsoft Teams,
+          SharePoint Online, Entra ID (Azure AD), Conditional Access, Defender, and compliance for enterprise
+          tenants. I’ve worked across HCL, LTIMindtree, and TCS on end-user support, critical incident handling,
+          migrations, and modern workplace enablement.
+          <br /><br />
+          I enjoy solving complex identity and collaboration issues, improving security posture, and partnering with
+          stakeholders to design scalable, supportable solutions on the Microsoft 365 platform.
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <h2 class="section-title">Skills & Strengths</h2>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Microsoft 365 & Identity</div>
+              <div class="card-subtitle">Core Administration</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <ul class="list">
+              <li>Exchange Online administration, mail flow, transport rules, mailbox management</li>
+              <li>Microsoft Teams administration, policies, collaboration governance</li>
+              <li>SharePoint Online site administration & permission models</li>
+              <li>Entra ID (Azure AD), Conditional Access, MFA, identity troubleshooting</li>
+              <li>Azure AD Connect sync health & object sync troubleshooting</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Security, Compliance & Tooling</div>
+              <div class="card-subtitle">Modern Workplace</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <ul class="list">
+              <li>Microsoft 365 Defender & Compliance configuration</li>
+              <li>SharePoint & Exchange migrations (ShareGate, on-prem to cloud)</li>
+              <li>Proofpoint protection server administration</li>
+              <li>PowerShell scripting for automation and reporting</li>
+              <li>LogMeIn and remote support tools for global environments</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-chips">
+        <span class="skill-chip">Exchange Online</span>
+        <span class="skill-chip">Microsoft Teams</span>
+        <span class="skill-chip">SharePoint Online</span>
+        <span class="skill-chip">Entra ID / Azure AD</span>
+        <span class="skill-chip">Conditional Access</span>
+        <span class="skill-chip">PowerShell</span>
+        <span class="skill-chip">M365 Defender</span>
+        <span class="skill-chip">ShareGate Migrations</span>
+        <span class="skill-chip">Active Directory</span>
+        <span class="skill-chip">Power Apps · Power Automate</span>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+      <h2 class="section-title">Experience</h2>
+
+      <div class="grid">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Technical Specialist · Tata Consultancy Services</div>
+              <div class="card-subtitle">Jul 2023 – Present · Hyderabad, India</div>
+            </div>
+            <span class="pill">SharePoint & Teams Admin</span>
+          </div>
+          <div class="card-body">
+            <ul class="list">
+              <li>Administer SharePoint Online sites, permissions, and governance for enterprise workloads.</li>
+              <li>Migrated content from SharePoint on-prem and shared drives to SharePoint Online using ShareGate.</li>
+              <li>Manage Microsoft Teams lifecycle, collaboration policies, and security settings.</li>
+              <li>Develop Power Apps and Power Automate solutions to automate business workflows.</li>
+              <li>Collaborate with security teams on Conditional Access, sensitivity labels, and security baselines.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Senior Software Engineer · LTIMindtree</div>
+              <div class="card-subtitle">May 2022 – Aug 2023 · Hyderabad, India</div>
+            </div>
+            <span class="pill">Exchange Online · CritSit</span>
+          </div>
+          <div class="card-body">
+            <ul class="list">
+              <li>Worked as Microsoft Support Engineer for Exchange Online.</li>
+              <li>Handled global P1 and critical cases in the CritSit team.</li>
+              <li>Troubleshot mail flow, throttling, hybrid issues, and mailbox failures.</li>
+              <li>Worked with Microsoft engineering teams for escalations and root cause analysis.</li>
+              <li>Ensured SLA-driven responses and high customer satisfaction.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Technical Specialist · HCL Technologies</div>
+              <div class="card-subtitle">Sep 2019 – Apr 2022 · Chennai, India</div>
+            </div>
+            <span class="pill">M365 Support</span>
+          </div>
+          <div class="card-body">
+            <ul class="list">
+              <li>Started as fresher supporting Office 365 and progressed to M365 admin tasks.</li>
+              <li>Troubleshot Exchange Online, mail flow, and Outlook issues.</li>
+              <li>Supported Teams collaboration, meetings, and configurations.</li>
+              <li>Resolved Azure AD identity, MFA, and sign-in issues.</li>
+              <li>Worked on SharePoint Online, OneDrive, and general Office 365 workloads.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2 class="section-title">Highlighted Work & Projects</h2>
+      <p class="projects-tagline">
+        A few examples of the work I’ve done across TCS, LTIMindtree, and HCL.
+      </p>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">SharePoint Online Migration</div>
+              <div class="card-subtitle">TCS · Modern Workplace</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <ul class="list">
+              <li>Migrated sites and data from SharePoint On-Prem and shared drives.</li>
+              <li>Improved governance, structure, permissions, and modern experience.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Exchange Online Critical Incident Support</div>
+              <div class="card-subtitle">Mindtree · Microsoft Partner Case</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <ul class="list">
+              <li>Resolved P1 and critical incidents for enterprise customers.</li>
+              <li>Worked with Microsoft engineering teams during outages.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Power Platform Automation</div>
+              <div class="card-subtitle">TCS · Process Automation</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <ul class="list">
+              <li>Created Power Apps for internal business teams.</li>
+              <li>Built approval workflows, notifications, and reporting flows.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">M365 Support & Troubleshooting</div>
+              <div class="card-subtitle">HCL · O365 Support</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <ul class="list">
+              <li>Provided global support for Exchange, Teams, SharePoint, and Outlook.</li>
+              <li>Created internal documentation for troubleshooting.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section id="certs">
+      <h2 class="section-title">Certifications & Education</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Certifications</div>
+              <div class="card-subtitle">Microsoft & Agile</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <ul class="list">
+              <li>MS-700: Managing Microsoft Teams</li>
+              <li>MS-100: Microsoft 365 Identity & Services</li>
+              <li>Certified SAFe for Teams Practitioner</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Education</div>
+              <div class="card-subtitle">B.Tech · Electrical & Electronics</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="card-body">
+              Bachelor of Technology (B.Tech), Electrical & Electronics Engineering<br />
+              Anurag Group of Institutions · 2015–2019
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> · Mahesh Babu Kola</div>
+      <div class="footer-links">
+        <a href="mailto:maheshkola1@outlook.com">Email</a>
+        <a href="https://www.linkedin.com/in/mahesh-kola-0b9059204" target="_blank">LinkedIn</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
